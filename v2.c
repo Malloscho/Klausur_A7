@@ -7,9 +7,9 @@
 void write_in_file(char const* const dateiname, int zahl)
 {
     printf("%i \n", zahl);
-    //datei = fopen(dateiname,"a");
-    //fprintf(datei,"%i\n",zahl);
-    //fclose(datei);
+    datei = fopen(dateiname,"a");
+    fprintf(datei,"%i\n",zahl);
+    fclose(datei);
 }
 
 void rechteckgenerator(int amplitude, int frequenz, int anzahl, char const* const dateiname)
@@ -48,8 +48,8 @@ int main(int argc, char* argv[])
             exit(0);
 
         case 'r':
-            //datei = fopen(argv[5],"w");
-            //fclose(datei);
+            datei = fopen(argv[5],"w");
+            fclose(datei);
             rechteckgenerator(atoi(argv[2]),atoi(argv[3]),atoi(argv[4]),argv[5]);
             break;
 
