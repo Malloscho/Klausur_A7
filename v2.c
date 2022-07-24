@@ -7,7 +7,7 @@
 void write_in_file(char const* const dateiname, int zahl)
 {
     printf("%i \n", zahl);
-    datei = fopen(dateiname,"a");
+    FILE* datei = fopen(dateiname,"a");
     fprintf(datei,"%i\n",zahl);
     fclose(datei);
 }
@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
             exit(0);
 
         case 'r':
-            datei = fopen(argv[5],"w");
+            FILE* datei = fopen(argv[5],"w");
             fclose(datei);
             rechteckgenerator(atoi(argv[2]),atoi(argv[3]),atoi(argv[4]),argv[5]);
             break;
